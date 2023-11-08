@@ -1,0 +1,24 @@
+header {
+    height: 7rem;
+    background-color: #3a29db;
+    color: #faf1a0;
+    text-align: center;
+    padding: 1em;
+}
+
+.menu {
+    list-style: none;
+    float: left;
+}
+
+.menu-item {
+    list-style: none;
+    display: inline;
+    margin-right: 1em;
+}
+
+.menu-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}

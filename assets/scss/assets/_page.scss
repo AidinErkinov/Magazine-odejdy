@@ -4,3 +4,47 @@ body {
     padding: 0;
     background-color: #c7b9b9;
 }
+
+section {
+    padding: 2em;
+}
+
+.product {
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.blank {
+    flex-basis: 100%;
+    width: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tovar {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+}
+
+.image {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    margin-right: 4rem;
+    margin-left: 4rem;
+}
+
+.image > img {
+    width: 100%;
+    height: auto;
+}
+
+.description {
+    margin-right: 2rem;
+}

@@ -1,12 +1,87 @@
+header {
+  height: 7rem;
+  background-color: #3a29db;
+  color: #faf1a0;
+  text-align: center;
+  padding: 1em;
+}
+
+.menu {
+  list-style: none;
+  float: left;
+}
+
+.menu-item {
+  list-style: none;
+  display: inline;
+  margin-right: 1em;
+}
+
+.menu-item a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #3a29db;
+  color: #faf1a0;
+  text-align: center;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #cc3a3a;
-  color: black;
+  background-color: #c7b9b9;
 }
-body div {
-  border: 1px solid black;
+
+section {
+  padding: 2em;
+}
+
+.product {
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.blank {
+  flex-basis: 100%;
+  width: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tovar {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+}
+
+.image {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  overflow: hidden;
+  margin-right: 4rem;
+  margin-left: 4rem;
+}
+
+.image > img {
+  width: 100%;
+  height: auto;
+}
+
+.description {
+  margin-right: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
