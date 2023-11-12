@@ -31,6 +31,13 @@ section {
     flex-basis: 30%;
 }
 
+.absolute-tovar {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    top: 0;
+}
+
 .image {
     position: relative;
     width: 10rem;

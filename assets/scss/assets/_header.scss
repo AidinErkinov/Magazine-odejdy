@@ -1,9 +1,8 @@
 header {
     height: 7rem;
     background-color: #3a29db;
-    color: #faf1a0;
     text-align: center;
-    padding: 1em;
+    @include theme;
 }
 
 .menu {
@@ -22,3 +21,4 @@ header {
     text-decoration: none;
     font-weight: bold;
 }
+
