@@ -1,7 +1,6 @@
-@mixin theme ($theme:aqua) {
+@mixin theme ($theme: #00aeb4) {
     color: $theme;
-    border: 1px solid black;
-    padding: 2em;
+    padding: 1em;
 }
 
 @import 'assets/header', 'assets/footer', 'assets/page';

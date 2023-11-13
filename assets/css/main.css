@@ -1,15 +1,14 @@
 header {
-  height: 7rem;
-  background-color: #3a29db;
+  height: 3rem;
+  background-color: rgb(110, 255, 208);
   text-align: center;
-  color: aqua;
-  border: 1px solid black;
-  padding: 2em;
+  color: #00aeb4;
+  padding: 1em;
 }
 
 .menu {
   list-style: none;
-  float: left;
+  float: none;
 }
 
 .menu-item {
@@ -19,35 +18,80 @@ header {
 }
 
 .menu-item a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   font-weight: bold;
 }
 
 footer {
-  background-color: #3a29db;
-  color: #faf1a0;
+  color: #000000;
   text-align: center;
   padding: 1em;
   position: fixed;
   bottom: 0;
   width: 100%;
+  display: inline-block;
+}
+
+.second-bootom {
+  color: #161720;
+  display: flex;
+  background-color: #ffffff;
+  height: 3rem;
+  width: 80%;
+  max-width: 100px;
+  padding-top: 2em;
+  margin-bottom: 1em;
+  box-shadow: 0 0 5px 5px rgb(142, 214, 255);
+  border-radius: 150px;
+  display: inline-block;
+  margin-right: 50rem;
+}
+
+.text {
+  font-size: 30px;
+  display: inline-block;
+}
+
+.foot-menu {
+  background-color: #00aeb4;
+  list-style: none;
+  display: inline;
+  margin-right: 4em;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: rgb(8, 34, 74);
   margin: 0;
   padding: 0;
-  background-color: #c7b9b9;
+  background-color: rgb 228, 255, 248;
+}
+
+.hhh {
+  font-weight: 500;
+  font-size: 50px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+  margin: 0;
+  line-height: 20PX;
+}
+
+.strong {
+  font-weight: 900;
 }
 
 section {
   padding: 2em;
 }
 
-.product {
-  margin-right: 2rem;
-  margin-left: 2rem;
+U {
+  text-decoration-color: rgb(110, 255, 208);
+  font-weight: bolder;
+  text-underline-offset: 8px;
 }
 
 .blank {
@@ -59,6 +103,38 @@ section {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding-top: 120px;
+}
+
+.bottom {
+  color: #ffffff;
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background: rgb(4, 247, 171);
+  background: linear-gradient(90deg, rgb(4, 247, 171) 0%, rgb(1, 184, 172) 100%);
+  text-align: center;
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  width: 80%;
+  max-width: 15rem;
+  font-size: 20px;
+  /* box-shadow: 0 0 5px 5px rgb(255, 255, 255); */
+  border-radius: 10px;
+  border: 2px solid #00a99b;
+}
+
+.line {
+  background: rgb(110, 255, 208);
+  display: block;
+  height: 100%;
+  float: left;
+  width: 5px;
+  margin-right: 1rem;
+  padding-bottom: 2rem;
 }
 
 .tovar {
@@ -68,28 +144,20 @@ section {
 }
 
 .absolute-tovar {
-  position: absolute;
-  right: 0;
-  width: 300px;
-  top: 0;
+  position: relative;
+  width: 500px;
+  margin-right: 10rem;
 }
 
 .image {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  overflow: hidden;
-  margin-right: 4rem;
-  margin-left: 4rem;
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
 }
 
 .image > img {
   width: 100%;
   height: auto;
-}
-
-.description {
-  margin-right: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

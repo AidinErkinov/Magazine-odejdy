@@ -1,9 +1,36 @@
 footer {
-    background-color: #3a29db;
-    color: #faf1a0;
+    color: #000000;
     text-align: center;
     padding: 1em;
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: inline-block;
+}
+
+.second-bootom {
+    color: #161720;
+    display: flex;
+    background-color: #ffffff;
+    height: 3rem;
+    width: 80%;
+    max-width: 100px;
+    padding-top: 2em;
+    margin-bottom: 1em;
+    box-shadow: 0 0 5px 5px rgb(142, 214, 255);
+    border-radius: 150px;
+    display: inline-block;
+    margin-right: 50rem;
+}
+
+.text {
+    font-size: 30px;
+    display: inline-block;
+}
+
+.foot-menu {
+    background-color: #00aeb4;
+    list-style: none;
+    display: inline;
+    margin-right: 4em;
 }
