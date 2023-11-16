@@ -1,163 +1,18 @@
-header {
-  height: 3rem;
-  background-color: rgb(110, 255, 208);
-  text-align: center;
-  color: #00aeb4;
-  padding: 1em;
-}
+/* Error: expected more input.
+ *    ,
+ * 56 | С рабочим бутсрапом сделай колонны с ul ссылка в it https://getbootstrap.com/docs/4.0/layout/grid/
+ *    |                                                                                                   ^
+ *    '
+ *   assets\scss\assets\_footer.scss 56:99  @import
+ *   assets\scss\main.scss 6:26             root stylesheet */
 
-.menu {
-  list-style: none;
-  float: none;
-}
-
-.menu-item {
-  list-style: none;
-  display: inline;
-  margin-right: 1em;
-}
-
-.menu-item a {
-  color: #000000;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer {
-  color: #000000;
-  text-align: center;
-  padding: 1em;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: inline-block;
-}
-
-.second-bootom {
-  color: #161720;
-  display: flex;
-  background-color: #ffffff;
-  height: 3rem;
-  width: 80%;
-  max-width: 100px;
-  padding-top: 2em;
-  margin-bottom: 1em;
-  box-shadow: 0 0 5px 5px rgb(142, 214, 255);
-  border-radius: 150px;
-  display: inline-block;
-  margin-right: 50rem;
-}
-
-.text {
-  font-size: 30px;
-  display: inline-block;
-}
-
-.foot-menu {
-  background-color: #00aeb4;
-  list-style: none;
-  display: inline;
-  margin-right: 4em;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  color: rgb(8, 34, 74);
-  margin: 0;
-  padding: 0;
-  background-color: rgb 228, 255, 248;
-}
-
-.hhh {
-  font-weight: 500;
-  font-size: 50px;
-  margin: 0;
-}
-
-h2 {
-  font-size: 40px;
-  margin: 0;
-  line-height: 20PX;
-}
-
-.strong {
-  font-weight: 900;
-}
-
-section {
-  padding: 2em;
-}
-
-U {
-  text-decoration-color: rgb(110, 255, 208);
-  font-weight: bolder;
-  text-underline-offset: 8px;
-}
-
-.blank {
-  flex-basis: 100%;
-  width: 0;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-right: 2rem;
-  margin-left: 2rem;
-  padding-top: 120px;
-}
-
-.bottom {
-  color: #ffffff;
-  display: flex;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  background: rgb(4, 247, 171);
-  background: linear-gradient(90deg, rgb(4, 247, 171) 0%, rgb(1, 184, 172) 100%);
-  text-align: center;
-  display: inline-block;
-  height: 4rem;
-  line-height: 4rem;
-  width: 80%;
-  max-width: 15rem;
-  font-size: 20px;
-  /* box-shadow: 0 0 5px 5px rgb(255, 255, 255); */
-  border-radius: 10px;
-  border: 2px solid #00a99b;
-}
-
-.line {
-  background: rgb(110, 255, 208);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-  height: 100%;
-  float: left;
-  width: 5px;
-  margin-right: 1rem;
-  padding-bottom: 2rem;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: expected more input.\a    \2577 \a 56 \2502  \421  \440 \430 \431 \43e \447 \438 \43c  \431 \443 \442 \441 \440 \430 \43f \43e \43c  \441 \434 \435 \43b \430 \439  \43a \43e \43b \43e \43d \43d \44b  \441  ul \441 \441 \44b \43b \43a \430  \432  it https://getbootstrap.com/docs/4.0/layout/grid/\a    \2502                                                                                                    ^\a    \2575 \a   assets\\scss\\assets\\_footer.scss 56:99  @import\a   assets\\scss\\main.scss 6:26             root stylesheet";
 }
-
-.tovar {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 30%;
-}
-
-.absolute-tovar {
-  position: relative;
-  width: 500px;
-  margin-right: 10rem;
-}
-
-.image {
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-}
-
-.image > img {
-  width: 100%;
-  height: auto;
-}
-
-/*# sourceMappingURL=main.css.map */

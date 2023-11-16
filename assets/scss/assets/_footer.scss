@@ -1,36 +1,56 @@
 footer {
-    color: #000000;
     text-align: center;
     padding: 1em;
-    position: fixed;
     bottom: 0;
     width: 100%;
     display: inline-block;
 }
 
-.second-bootom {
-    color: #161720;
+.second-button {
     display: flex;
     background-color: #ffffff;
-    height: 3rem;
-    width: 80%;
+    height: 5rem;
+    width: 5rem;
     max-width: 100px;
-    padding-top: 2em;
     margin-bottom: 1em;
-    box-shadow: 0 0 5px 5px rgb(142, 214, 255);
-    border-radius: 150px;
+    box-shadow: 0 0 5px 5px rgb(110,255,208);
+    border-radius: 50%;
     display: inline-block;
     margin-right: 50rem;
+    font-size: 3rem;
+    border: 0;
+    float: left;
+
+    span {
+        padding-left: 0.5rem;
+        color: rgb(8, 34, 74);
+    }
 }
 
-.text {
-    font-size: 30px;
+.footer-div {
+    background-color: rgb(110,255,208);
+    width: 50%;
+    height: 150px;
     display: inline-block;
 }
 
 .foot-menu {
-    background-color: #00aeb4;
-    list-style: none;
     display: inline;
-    margin-right: 4em;
 }
+
+.footer-list {
+    li {
+        display: inline-block;
+    }
+}
+
+.button-list-item {
+    width: 100px;
+}
+
+.block-div {
+    width: 500px;
+}
+
+/* Почему bootsrtrap не работает если появляются свойства значит он работает. 
+С рабочим бутсрапом сделай колонны с ul ссылка в it https://getbootstrap.com/docs/4.0/layout/grid/

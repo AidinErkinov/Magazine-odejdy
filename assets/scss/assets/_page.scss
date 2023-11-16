@@ -65,14 +65,18 @@ U {
     border: 2px solid #00a99b;
 }
 
+li {
+    list-style-type: none;
+}
+
 .line {
     background: rgb(110,255,208);
     display: block;
-    height: 100%;
+    height: 80%;
     float: left;
     width: 5px;
     margin-right: 1rem;
-    padding-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .tovar {
