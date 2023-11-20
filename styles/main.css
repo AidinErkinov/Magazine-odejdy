@@ -1,6 +1,0 @@
-
-.product.middlediv {
-}
-/* Когда пробел, он относится к элементу который находится в .product
-.product.middlediv => class="product middlediv"
-.product .middlediv => <div class="product"><div class="middlediv"></div></div> 

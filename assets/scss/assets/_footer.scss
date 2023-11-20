@@ -16,10 +16,9 @@ footer {
     box-shadow: 0 0 5px 5px rgb(110,255,208);
     border-radius: 50%;
     display: inline-block;
-    margin-right: 50rem;
     font-size: 3rem;
     border: 0;
-    float: left;
+    float:left;
 
     span {
         padding-left: 0.5rem;
@@ -27,15 +26,15 @@ footer {
     }
 }
 
-.footer-div {
+.foot-block {
     background-color: rgb(110,255,208);
-    width: 50%;
-    height: 150px;
+    width: 50rem;
+    height: 10rem;
     display: inline-block;
 }
 
 .foot-menu {
-    display: inline;
+    float: none;
 }
 
 .footer-list {
@@ -44,13 +43,6 @@ footer {
     }
 }
 
-.button-list-item {
-    width: 100px;
-}
-
-.block-div {
-    width: 500px;
-}
 
 /* Почему bootsrtrap не работает если появляются свойства значит он работает. 
 С рабочим бутсрапом сделай колонны с ul ссылка в it https://getbootstrap.com/docs/4.0/layout/grid/ */ 
