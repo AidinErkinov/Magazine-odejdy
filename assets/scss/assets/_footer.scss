@@ -11,14 +11,14 @@ footer {
     background-color: #ffffff;
     height: 5rem;
     width: 5rem;
-    max-width: 100px;
     margin-bottom: 1em;
     box-shadow: 0 0 5px 5px rgb(110,255,208);
     border-radius: 50%;
     display: inline-block;
     font-size: 3rem;
     border: 0;
-    float:left;
+    float: left;
+    margin-left: 3rem;
 
     span {
         padding-left: 0.5rem;
@@ -28,9 +28,9 @@ footer {
 
 .foot-block {
     background-color: rgb(110,255,208);
-    width: 50rem;
+    width: 50%;
     height: 10rem;
-    display: inline-block;
+
 }
 
 .foot-menu {
