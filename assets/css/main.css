@@ -52,17 +52,44 @@ footer {
 }
 
 .foot-block {
+  display: flex;
+  position: absolute;
   background-color: rgb(110, 255, 208);
-  width: 50%;
+  width: 70rem;
   height: 10rem;
+  text-align: left, center;
+  border-radius: 20px;
+  padding: 0.8rem;
 }
 
-.foot-menu {
-  float: none;
+.foot-zagolovok {
+  width: 15rem;
+  font-size: 30px;
+  height: 8rem;
+  border-right: 3px solid white;
+  padding-right: 10rem;
+  padding-left: 3rem;
 }
 
-.footer-list li {
-  display: inline-block;
+.foot-image {
+  height: 8rem;
+  width: 14rem;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+.foot-image > img {
+  height: 7rem;
+  width: auto;
+  padding-top: 1rem;
+}
+
+.description-image-foot {
+  text-align: center;
+  padding-top: 3rem;
+  width: 10rem;
+  height: 8rem;
+  padding-bottom: 3rem;
 }
 
 /* Почему bootsrtrap не работает если появляются свойства значит он работает. 
@@ -113,6 +140,7 @@ U {
   margin-right: 2rem;
   margin-left: 2rem;
   padding-top: 120px;
+  margin-bottom: 10rem;
 }
 
 .bottom {
@@ -126,10 +154,24 @@ U {
   display: inline-block;
   height: 4rem;
   line-height: 4rem;
-  width: 80%;
-  max-width: 15rem;
+  width: 12rem;
   font-size: 20px;
   /* box-shadow: 0 0 5px 5px rgb(255, 255, 255); */
+  border-radius: 10px;
+  border: 2px solid #00a99b;
+}
+
+.bottom-near {
+  color: #ffffff;
+  background: rgb(4, 247, 171);
+  background: linear-gradient(90deg, rgb(4, 247, 171) 0%, rgb(1, 184, 172) 100%);
+  text-align: center;
+  height: 4rem;
+  margin-top: 3rem;
+  line-height: 4rem;
+  width: 3rem;
+  max-width: 15rem;
+  font-size: 20px;
   border-radius: 10px;
   border: 2px solid #00a99b;
 }

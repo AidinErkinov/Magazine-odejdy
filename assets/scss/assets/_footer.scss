@@ -27,22 +27,45 @@ footer {
 }
 
 .foot-block {
+    display: flex;
+    position: absolute;
     background-color: rgb(110,255,208);
-    width: 50%;
+    width: 70rem;
     height: 10rem;
-
+    text-align: left, center;
+    border-radius: 20px;
+    padding: 0.8rem;
 }
 
-.foot-menu {
-    float: none;
+.foot-zagolovok {
+    width: 15rem;
+    font-size: 30px;
+    height: 8rem;
+    border-right: 3px solid white;
+    padding-right: 10rem;
+    padding-left: 3rem;
 }
 
-.footer-list {
-    li {
-        display: inline-block;
-    }
+.foot-image{
+    height: 8rem;
+    width: 14rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
 }
 
+.foot-image > img {
+    height: 7rem;
+    width: auto;
+    padding-top: 1rem;
+}
+
+.description-image-foot {
+    text-align: center;
+    padding-top: 3rem;
+    width: 10rem;
+    height: 8rem;
+    padding-bottom: 3rem;
+}
 
 /* Почему bootsrtrap не работает если появляются свойства значит он работает. 
 С рабочим бутсрапом сделай колонны с ul ссылка в it https://getbootstrap.com/docs/4.0/layout/grid/ */ 
