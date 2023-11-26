@@ -107,14 +107,14 @@ li {
     margin-right: 10rem;
 }
 
-.image {
+.image-tovar {
     position: absolute;
-    width: 20rem;
-    height: 20rem;
+    height: 40rem;
+    width: 5rem;
 }
 
-.image > img {
-    width: 100%;
-    height: auto;
+.image-tovar > img {
+    height: 100%;
+    width: auto;
 }
 

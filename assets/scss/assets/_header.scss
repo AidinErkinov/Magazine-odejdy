@@ -1,13 +1,12 @@
 header {
-    height: 3rem;
-    background-color:  rgb(110,255,208);
-    text-align: center;
-    @include theme;
+    height: 6rem;
+    padding-top: 2rem;
 }
 
 .menu {
     list-style: none;
     float: none;
+    padding-top: 1.5rem;
 }
 
 .menu-item {
@@ -22,3 +21,17 @@ header {
     font-weight: bold;
 }
 
+.logo {
+    height: 5rem;
+    width: 5rem;
+}
+
+.logo > img {
+    height: 12rem;
+    width: 12rem;
+    position: top;
+}
+
+.button-head {
+    margin-top: 1.3rem;
+}
