@@ -9,7 +9,6 @@ body {
 .hhh{
     font-weight: 500;
     font-size: 50px;
-    margin: 0;
 }
 
 h2 {
@@ -30,6 +29,10 @@ U {
     text-decoration-color: rgb(110,255,208);
     font-weight: bolder;
     text-underline-offset: 8px;
+}
+
+.description {
+    padding-top: 1rem; 
 }
 
 .blank {

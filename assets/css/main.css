@@ -66,6 +66,7 @@ footer {
   border: 0;
   float: left;
   margin-left: 3rem;
+  margin-top: 3rem;
 }
 .second-button span {
   padding-left: 0.5rem;
@@ -75,7 +76,7 @@ footer {
 .foot-block {
   display: flex;
   position: absolute;
-  background-color: rgb(110, 255, 208);
+  background-color: rgb(4, 247, 171);
   width: 80rem;
   height: 10rem;
   text-align: left, center;
@@ -134,7 +135,6 @@ body {
 .hhh {
   font-weight: 500;
   font-size: 50px;
-  margin: 0;
 }
 
 h2 {
@@ -155,6 +155,10 @@ U {
   text-decoration-color: rgb(110, 255, 208);
   font-weight: bolder;
   text-underline-offset: 8px;
+}
+
+.description {
+  padding-top: 1rem;
 }
 
 .blank {
