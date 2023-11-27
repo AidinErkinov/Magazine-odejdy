@@ -7,7 +7,7 @@ header {
 .menu {
   list-style: none;
   float: none;
-  padding-top: 1.5rem;
+  padding-top: 1.8rem;
 }
 
 .menu-item {
@@ -28,13 +28,21 @@ header {
 }
 
 .logo > img {
-  height: 12rem;
-  width: 12rem;
+  height: 100%;
+  width: auto;
   position: top;
 }
 
 .button-head {
-  margin-top: 1.3rem;
+  margin-top: 1rem;
+  color: #000000;
+  padding: 0.5rem;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  max-width: 15rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.5);
 }
 
 footer {
