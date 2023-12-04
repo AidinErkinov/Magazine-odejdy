@@ -1,7 +1,0 @@
-@mixin theme ($theme: #00aeb4) {
-    color: $theme;
-    padding: 1em;
-}
-
-@import 'assets/header', 'assets/footer', 'assets/page';
-
