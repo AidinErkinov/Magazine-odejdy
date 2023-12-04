@@ -1,11 +1,10 @@
-import {Program} from './program.js'; 
+import {Program} from './program.js';
 var program = new Program (); 
 program.execute();
-program.execute();
-program.execute();
-program.execute();
-program.execute();
-
+let elem = document.getElementById ("button-add-product"); 
+console.log (elem.outerText);
+let ele = document.getElementsByClassName ("menu-item"); 
+console.log (ele);
 
 
 

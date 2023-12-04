@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-dev": "sass --watch --update --style=expanded assets/scss:assets/css",
     "build-prod": "sass --no-source-map --style=compressed assets/scss:assets/css && babel main.js -d dist --presets es2015",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch",
+    "second-sass-dev": "sass --watch --update --style=expanded second-assets/scss:second-assets/css"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +23,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.23.3",
+    "@babel/preset-env": "^7.23.5",
     "bootstrap": "^5.3.2",
     "requirejs": "^2.3.6"
   },
