@@ -18,6 +18,13 @@ export class Program {
     } 
 
     dobavil () {
+        var dobavil = document.getElementById ("name").value;
+        if (typeof(Storage) !== "undefined") {
+            localStorage.setItem("savedText", dobavil);
+            alert ("Текст сохранился");
+        } else {
+            alert ("Извините не сохранилось");
+        }
         console.log("dobavil");
     }
     
