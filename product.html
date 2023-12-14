@@ -15,6 +15,12 @@
         <input id="name" name="name" class="pole" type="text">
         <label for="description">Описание товара:</label>
         <textarea id="description" name="description" class="pole" placeholder="Введите текст"></textarea>
+        <label for="price-up">Цена:</label>
+        <input id="price-up" name="price-up" class="pole">
+        <label for="qty">Количество:</label>
+        <input id="qty" name="qty" class="pole">
+        <label id="labelPicture" for="pictire">Картинка:</label>
+        <input id="pictire" type="file">
         <button id="saveBtn">Добавить товар</button>
     </div>
     <header>
@@ -55,76 +61,11 @@
         <button id="button-add-product" class=>+</button>
         <div class="row">
             <div class="col-lg-6 col-xl-3">
-                <div class="product">
+                <div id="template-product" class="product d-none">
                     <img src="Img/De.jpeg" alt="Product 1">
-                    <h2>Xbox bro</h2>
+                    <h2 id="name-product">Xbox bro</h2>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quia laudantium quisquam corrupti deserunt consectetur.</p>
                     <p class="prize">Цена: $199.00</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/images.jpeg" alt="Product 2">
-                    <h2>Клавакокатура</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore necessitatibus eaque porro nihil perferendis quos.</p>
-                    <p class="prize">Цена: $19.99</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/Без названия (1).jpeg" alt="Product 1">
-                    <h2>Kompucter bro</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aut incidunt nemo</p>
-                    <p class="prize">Цена: $529.99</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/De.jpeg" alt="Product 1">
-                    <h2>Here we go again</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut quidem quibusdam quisquam id aliquid facere!</p>
-                    <p class="prize">Цена: $119.99</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/Без названия.jpeg" alt="Product 2">
-                    <h2>Earpods brah</h2>
-                    <p>Эта просто ушки на ушки и klsdfknsnsjngjsejthlsetjhlsejclnlclksecklesjcklelcsl.</p>
-                    <p class="prize">Цена: $929.99</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/Без названия.jpeg" alt="Product 2">
-                    <h2>Earpods brah</h2>
-                    <p>Эта просто ушки на ушки и klsdfknsnsjngjsejthlsetjhlsejclnlclksecklesjcklelcsl.</p>
-                    <p class="prize">Цена: $929.99</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/De.jpeg" alt="Product 1">
-                    <h2>Xbox 1</h2>
-                    <p>Check this ldfgkmdddddddddddddddddddvk'l;'''</p>
-                    <p class="prize">Цена: $19.99</p>
-                    <button class="page-button">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="col-lg-6 col-xl-3">
-                <div class="product">
-                    <img src="Img/images.jpeg" alt="Product 2">
-                    <h2>Klava i vse</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <p class="prize">Цена: $29.99</p>
                     <button class="page-button">Добавить в корзину</button>
                 </div>
             </div>

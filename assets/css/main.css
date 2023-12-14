@@ -255,15 +255,16 @@ li {
 #pop-up {
   background-color: aquamarine;
   position: absolute;
-  width: 40rem;
-  height: 10rem;
+  width: 30rem;
+  height: auto;
   top: 40%;
   margin-top: -5rem;
-  left: 50%;
+  left: 53%;
   margin-left: -20rem;
   border-radius: 10px;
   padding: 2rem;
   display: none;
+  font-size: 1.5rem;
 }
 
 .product {

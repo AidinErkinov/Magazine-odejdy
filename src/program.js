@@ -19,30 +19,62 @@ export class Program {
     dobavil () {
         var nameField = document.getElementById ("name");
         var decriptionField = document.getElementById ("description");
-        let product = {'name': nameField.value, 'decription': decriptionField.value};
+        var priceupField = document.getElementById ("price-up");
+        var qtyField = document.getElementById ("qty");
+        var pictireField = document.getElementById ("pictire");
+        let product = { 
+            'name': nameField.value, 
+            'decription': decriptionField.value,
+            'price-up': priceupField.value,
+            'quantity' : Number(qtyField.value),
+            'image' : pictireField.files[0]       
+        };
        
-        if (typeof(Storage) !== "undefined") {
-            localStorage.setItem("product", product);
-            if (this.validate(nameField, decriptionField)) 
-                this.popup.style.display = "none";
-         } else {
+        if (typeof(Storage) !== "undefined" && 
+            this.validate(nameField, decriptionField, priceupField, qtyField, pictireField)) {
+            
+            localStorage.setItem("product", JSON.stringify(product));
+            this.popup.style.display = "none";
+          //  let productText = localStorage.getItem("product");
+          //  let productObj = JSON.parse(productText);
+            this.otobrajai (product);
+        } else {
             alert ("Извините не \"сохранилось\"");
         }
-        console.log("dobavil"); 
     }
     
+    otobrajai (product) {
+       // var template = document.getElementById ("template-product");
+        let templateName = document.getElementById ("name-product");
+        templateName.value = product.name;
+        console.dir (template);
+    }
+
 //obj = { name: "nazvanie", description: "opisanie", func: function() {}}
 /*if (!this.validate(nameField)) - ЭТО FAlse   name: "nazvanie", description: "opisanie"*/
 
-    validate (elem1, elem2) {
+    validate (nameField, decriptionField, priceupField, qtyField, pictireField) {
         let error = false;
-        if (elem1.value=="") {
+        if (nameField.value=="") {
             error = true; 
-            elem1.style.border = "1px solid red";
+            nameField.style.border = "1px solid red";
         }
-        if (elem2.value=="") {
+        if (decriptionField.value=="") {
             error = true;
-            elem2.style.border = "1px solid red";  
+            decriptionField.style.border = "1px solid red";  
+        }
+        if (priceupField.value=="") {
+            error = true;
+            priceupField.style.border = "1px solid red";  
+        }
+        if (qtyField.value=="") {
+            error = true;
+            qtyField.style.border = "1px solid red";  
+        }
+        if (pictireField.value=="") {
+            error = true;
+            let labelPicture = document.getElementById ("labelPicture");
+            labelPicture.style.color = "red";  
         }
         return !error;
     }
