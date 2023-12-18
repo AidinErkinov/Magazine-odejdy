@@ -3,6 +3,8 @@ import {Calculator} from './calculator.js';
 export class Program {
     constructor () {
        this.popup = document.getElementById ("pop-up");
+       this.templateProduct = document.getElementById ("template-product");
+       this.templateProduct.style.display = "none";
     }
 
     changeButtonColor (t, color) {
@@ -18,20 +20,22 @@ export class Program {
 
     dobavil () {
         var nameField = document.getElementById ("name");
-        var decriptionField = document.getElementById ("description");
+        var descriptionField = document.getElementById ("description");
         var priceupField = document.getElementById ("price-up");
         var qtyField = document.getElementById ("qty");
         var pictireField = document.getElementById ("pictire");
+        nameField.value = "";
+        descriptionField.value 
         let product = { 
             'name': nameField.value, 
-            'decription': decriptionField.value,
+            'description': descriptionField.value,
             'price-up': priceupField.value,
             'quantity' : Number(qtyField.value),
             'image' : pictireField.files[0]       
         };
        
         if (typeof(Storage) !== "undefined" && 
-            this.validate(nameField, decriptionField, priceupField, qtyField, pictireField)) {
+            this.validate(nameField, descriptionField, priceupField, qtyField, pictireField)) {
             
             localStorage.setItem("product", JSON.stringify(product));
             this.popup.style.display = "none";
@@ -44,10 +48,24 @@ export class Program {
     }
     
     otobrajai (product) {
-       // var template = document.getElementById ("template-product");
-        let templateName = document.getElementById ("name-product");
-        templateName.value = product.name;
-        console.dir (template);
+        let container = document.getElementById ("product-container");
+        var template = document.getElementById ("template-product");
+        let clone = template.cloneNode (true);
+     
+        let templateName = clone.querySelector ("#name-product");
+        let templateDescription = clone.querySelector ("#description-product");
+        templateDescription.innerText = product.description;
+        console.log (product);
+        templateName.innerText = product.name;
+        clone.style.display = "block";
+        container.append (clone);
+
+        //let templateDescription= document.getElementById ("description-product");
+        //templateDescription.innerText = product.decription;
+        //добавить сюда блоки 
+
+        //this.templateProduct.style.display = "block";
+        
     }
 
 //obj = { name: "nazvanie", description: "opisanie", func: function() {}}
