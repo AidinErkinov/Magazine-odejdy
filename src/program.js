@@ -1,4 +1,5 @@
 import {Calculator} from './calculator.js'; 
+import {Product} from './product.js';
 
 export class Program {
     constructor () {
@@ -24,23 +25,23 @@ export class Program {
         var priceupField = document.getElementById ("price-up");
         var qtyField = document.getElementById ("qty");
         var pictireField = document.getElementById ("pictire");
-        nameField.value = "";
-        descriptionField.value 
-        let product = { 
-            'name': nameField.value, 
-            'description': descriptionField.value,
-            'price-up': priceupField.value,
-            'quantity' : Number(qtyField.value),
-            'image' : pictireField.files[0]       
-        };
-       
+        // подключаем product js
+        let product = new Product (nameField.value, descriptionField.value, priceupField.value, qtyField.value, pictireField.files [0]);
+        product.setFields (nameField, descriptionField, priceupField, qtyField, pictireField);        
+        
         if (typeof(Storage) !== "undefined" && 
-            this.validate(nameField, descriptionField, priceupField, qtyField, pictireField)) {
-            
+            this.validate(product.fields)) {
+                let existingProductText = localStorage.getItem("product");
+                if (existingProductText) {
+                    let existingProductObj = JSON.parse(existingProductText);
+                    if (existingProductObj.name === product.name) {
+                        alert ("Товар с таким именем уже существует");
+                        return;
+                    }
+                }
             localStorage.setItem("product", JSON.stringify(product));
+            this.resetForm (product.fields);
             this.popup.style.display = "none";
-          //  let productText = localStorage.getItem("product");
-          //  let productObj = JSON.parse(productText);
             this.otobrajai (product);
         } else {
             alert ("Извините не \"сохранилось\"");
@@ -49,47 +50,56 @@ export class Program {
     
     otobrajai (product) {
         let container = document.getElementById ("product-container");
-        var template = document.getElementById ("template-product");
-        let clone = template.cloneNode (true);
-     
-        let templateName = clone.querySelector ("#name-product");
+        var template  = document.getElementById ("template-product");
+        let clone     = template.cloneNode (true);
+
+        let templateName        = clone.querySelector ("#name-product");
         let templateDescription = clone.querySelector ("#description-product");
-        templateDescription.innerText = product.description;
+        let templatePrice       = clone.querySelector ("#price-product");
+        let templateImage       = clone.querySelector ("#product-image");
         console.log (product);
-        templateName.innerText = product.name;
+        templateName.innerText  = product.name;
+        templateDescription.innerText = product.description;
+        templatePrice.innerText = product.price;
+        // Изменяется картинка
+        if (product.image) {
+            templateImage.src = URL.createObjectURL(product.image);
+        } else {
+            templateImage.src = "";
+        }
         clone.style.display = "block";
         container.append (clone);
 
-        //let templateDescription= document.getElementById ("description-product");
-        //templateDescription.innerText = product.decription;
-        //добавить сюда блоки 
-
-        //this.templateProduct.style.display = "block";
-        
     }
 
-//obj = { name: "nazvanie", description: "opisanie", func: function() {}}
-/*if (!this.validate(nameField)) - ЭТО FAlse   name: "nazvanie", description: "opisanie"*/
+    resetForm (fields) {
+        fields.nameField.value = "";
+        fields.descriptionField.value = "";
+        fields.priceupField.value = "";
+        fields.qtyField.value = "";
+        fields.pictireField.value = "";
+        console.dir (fields.pictireField);
+    }
 
-    validate (nameField, decriptionField, priceupField, qtyField, pictireField) {
+    validate (fields) {
         let error = false;
-        if (nameField.value=="") {
+        if (fields.nameField.value=="") {
             error = true; 
-            nameField.style.border = "1px solid red";
+            fields.nameField.style.border = "1px solid red";
         }
-        if (decriptionField.value=="") {
+        if (fields.descriptionField.value=="") {
             error = true;
-            decriptionField.style.border = "1px solid red";  
+            fields.descriptionField.style.border = "1px solid red";  
         }
-        if (priceupField.value=="") {
+        if (fields.priceupField.value=="") {
             error = true;
-            priceupField.style.border = "1px solid red";  
+            fields.priceupField.style.border = "1px solid red";  
         }
-        if (qtyField.value=="") {
+        if (fields.qtyField.value=="") {
             error = true;
-            qtyField.style.border = "1px solid red";  
+            fields.qtyField.style.border = "1px solid red";  
         }
-        if (pictireField.value=="") {
+        if (fields.pictireField.value=="") {
             error = true;
             let labelPicture = document.getElementById ("labelPicture");
             labelPicture.style.color = "red";  
@@ -113,3 +123,15 @@ export class Program {
         saveBtn.addEventListener("click", this.dobavil.bind(this));    
     }
 }
+
+
+//obj = { name: "nazvanie", description: "opisanie", func: function() {}}
+/*if (!this.validate(nameField)) - ЭТО FAlse   name: "nazvanie", description: "opisanie"*/
+
+
+        //let templateDescription= document.getElementById ("description-product");
+        //templateDescription.innerText = product.decription;
+        //добавить сюда блоки 
+
+        //this.templateProduct.style.display = "block";
+        
