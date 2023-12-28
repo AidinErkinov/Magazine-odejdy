@@ -1,5 +1,6 @@
 import {Calculator} from './calculator.js'; 
 import {Product} from './product.js';
+import {Cycle} from './cycle.js';
 
 export class Program {
     constructor () {
@@ -7,6 +8,31 @@ export class Program {
        this.templateProduct = document.getElementById ("template-product");
        this.templateProduct.style.display = "none";
        this.productsList = [];
+       this.cycleList = [];
+       this.cycle ();
+       this.iterate ();
+    }
+
+    cycle () {
+        let cycle = new Cycle ();
+        this.cycleList.push (cycle);
+        let cycle2 = new Cycle ();
+        this.cycleList.push (cycle2);
+        let cycle3 = new Cycle ();
+        this.cycleList.push (cycle3);
+    }
+
+    iterate () {
+        let min = 0;
+        let max = 1000;
+        for (let i=0; i<this.cycleList.length; i++) { 
+        this.cycleList [i].rndnumber = this.getRandomInt (min,max)
+        }
+        console.log (this.cycleList);
+    }
+
+    getRandomInt (min,max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     changeButtonColor (t, color) {
@@ -60,6 +86,7 @@ export class Program {
         let templateDescription = clone.querySelector ("#description-product");
         let templatePrice       = clone.querySelector ("#price-product");
         let templateImage       = clone.querySelector ("#product-image");
+        // С помощью clone можно оставить тот же адрес в ОЗУ, но он не будет привязан к значению. Это важно!!!
         console.log (product);
         templateName.innerText  = product.name;
         templateDescription.innerText = product.description;
@@ -72,7 +99,6 @@ export class Program {
         }
         clone.style.display = "block";
         container.append (clone);
-
     }
 
     haveprod () {
