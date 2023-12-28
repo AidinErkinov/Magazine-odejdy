@@ -6,6 +6,7 @@ export class Program {
        this.popup = document.getElementById ("pop-up");
        this.templateProduct = document.getElementById ("template-product");
        this.templateProduct.style.display = "none";
+       this.productsList = [];
     }
 
     changeButtonColor (t, color) {
@@ -28,7 +29,8 @@ export class Program {
         // подключаем product js
         let product = new Product (nameField.value, descriptionField.value, priceupField.value, qtyField.value, pictireField.files [0]);
         product.setFields (nameField, descriptionField, priceupField, qtyField, pictireField);        
-        
+        this.productsList.push (product);
+
         if (typeof(Storage) !== "undefined" && 
             this.validate(product.fields)) {
                 let existingProductText = localStorage.getItem("product");
@@ -39,7 +41,8 @@ export class Program {
                         return;
                     }
                 }
-            localStorage.setItem("product", JSON.stringify(product));
+                console.log (this.productsList);
+            localStorage.setItem("product", JSON.stringify(this.productsList));
             this.resetForm (product.fields);
             this.popup.style.display = "none";
             this.otobrajai (product);
@@ -72,6 +75,21 @@ export class Program {
 
     }
 
+    haveprod () {
+        let productsList = localStorage.getItem("product");
+        let productarr = JSON.parse(productsList);
+        this.productsList = productarr;
+        /* for (let i=0; i<productarr.length; i++) {
+            this.otobrajai (productarr[i])
+        }*/
+
+        // zakaz 
+        productarr.forEach(element => {
+            this.otobrajai(element);
+        }); 
+        // this.otobrajai (productarr);
+    }
+
     resetForm (fields) {
         fields.nameField.value = "";
         fields.descriptionField.value = "";
@@ -80,6 +98,7 @@ export class Program {
         fields.pictireField.value = "";
         console.dir (fields.pictireField);
     }
+    
 
     validate (fields) {
         let error = false;
@@ -114,13 +133,14 @@ export class Program {
         var res = calculator.sum ();
         var calculator2 = new Calculator (9,4);
         var res2 = calculator2.sum ();
-        console.log(res);
-        console.log(res2);
+
         let elem = document.getElementById ("button-add-product"); 
         elem.addEventListener("click", this.open.bind(this));
 
         let saveBtn = document.getElementById ("saveBtn");
-        saveBtn.addEventListener("click", this.dobavil.bind(this));    
+        saveBtn.addEventListener("click", this.dobavil.bind(this)); 
+        
+        window.addEventListener("load", this.haveprod.bind(this));
     }
 }
 
@@ -134,4 +154,4 @@ export class Program {
         //добавить сюда блоки 
 
         //this.templateProduct.style.display = "block";
-        
+        //array1.forEach((element) => console.log(element));
