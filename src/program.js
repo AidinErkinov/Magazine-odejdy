@@ -19,20 +19,20 @@ export class Program {
         let cycle2 = new Cycle ();
         this.cycleList.push (cycle2);
         let cycle3 = new Cycle ();
-        this.cycleList.push (cycle3);
+        this.cycleList.push (cycle3); 
     }
 
-    iterate () {
+    iterate() {
         let min = 0;
         let max = 1000;
         for (let i=0; i<this.cycleList.length; i++) { 
-        this.cycleList [i].rndnumber = this.getRandomInt (min,max)
+            let rndnumber = Cycle.getRandomInt (min,max); 
+            if (rndnumber > 500) {
+                break;
+            } 
+            this.cycleList [i].rndnumber = rndnumber;
         }
         console.log (this.cycleList);
-    }
-
-    getRandomInt (min,max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     changeButtonColor (t, color) {
