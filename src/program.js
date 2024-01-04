@@ -101,19 +101,21 @@ export class Program {
         container.append (clone);
     }
 
-    haveprod () {
+    haveprod (filter) {
         let productsList = localStorage.getItem("product");
         let productarr = JSON.parse(productsList);
         this.productsList = productarr;
-        /* for (let i=0; i<productarr.length; i++) {
-            this.otobrajai (productarr[i])
-        }*/
-
-        // zakaz 
+        console.log ("Это мой фильтр" + typeof filter);
         productarr.forEach(element => {
-            this.otobrajai(element);
+            if (element.priceup == filter ||
+                filter == "0") {
+                this.otobrajai(element);
+            } 
         }); 
-        // this.otobrajai (productarr);
+    }
+
+    onload () {
+        this.haveprod("0");
     }
 
     resetForm (fields) {
@@ -151,7 +153,16 @@ export class Program {
         }
         return !error;
     }
-       
+    
+    filter (e) {
+        let container = document.getElementById("product-container"); 
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+          }
+        console.log (e.target.value);        
+        this.haveprod (e.target.value);
+        console.log (e.target.value)
+    }
     
     execute () {
         console.log("program executed");
@@ -166,8 +177,11 @@ export class Program {
         let saveBtn = document.getElementById ("saveBtn");
         saveBtn.addEventListener("click", this.dobavil.bind(this)); 
         
-        window.addEventListener("load", this.haveprod.bind(this));
-    }
+        window.addEventListener("load", this.onload.bind(this));
+
+        let filter = document.getElementById ("filter");
+        filter.addEventListener("change", this.filter.bind(this))
+    } 
 }
 
 
