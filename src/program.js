@@ -1,6 +1,7 @@
 import {Calculator} from './calculator.js'; 
 import {Product} from './product.js';
 import {Cycle} from './cycle.js';
+import {Weatherservice} from './services/weatherservice.js';
 
 export class Program {
     constructor () {
@@ -11,7 +12,14 @@ export class Program {
        this.cycleList = [];
        this.cycle ();
        this.iterate ();
+       console.log ("Daniil");
+       this.apicall ();
     }
+
+    apicall () {
+        let weatherservice = new Weatherservice ();
+        weatherservice.get ();
+    } 
 
     cycle () {
         let cycle = new Cycle ();
@@ -106,6 +114,15 @@ export class Program {
         let productarr = JSON.parse(productsList);
         this.productsList = productarr;
         console.log ("Это мой фильтр" + typeof filter);
+
+   /*     function filterProducts(products) {
+            return products.filter(function(product) {
+                return product.price >= 0 && product.price <= 1000;
+            });
+        }
+        let filteredProducts = filterProducts(productarr);
+        console.log(filteredProducts);
+    */
         productarr.forEach(element => {
             if (element.priceup == filter ||
                 filter == "0") {
