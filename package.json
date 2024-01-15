@@ -9,7 +9,7 @@
     "build-prod": "sass --no-source-map --style=compressed assets/scss:assets/css && babel main.js -d dist --presets es2015",
     "webpack-watch": "webpack --watch",
     "start": "concurrently \"npm run sass\" \"npm run webpack\"",
-    "sass": "sass --update --style=expanded assets/scss:assets/css",
+    "sass": "sass --watch --update --style=expanded assets/scss:assets/css",
     "webpack": "webpack --watch",
     "postinstall": "npm run start"
   },
