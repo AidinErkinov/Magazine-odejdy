@@ -1,11 +1,19 @@
 export class Weatherservice {
     constructor() {
         this.apikey = "e635bc02d4cc10bfda3e557445c4c790";
-        this.apilink = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${this.apikey}`;
+        this.city = "London";
+        this.apiserver = "https://api.openweathermap.org";
+        this.apiPath = "/data";
+        this.apiVersion = "2.5"
+        this.apiMethod = "weather"
+        this.apiParameters = `q=${this.city}&appid=${this.apikey}`;
+        this.initEvenListeners ();
     }
 
     get() {
-        fetch(this.apilink)
+        this.city = this.selectCity.value;
+        this.apiParameters = `q=${this.city}&appid=${this.apikey}`
+        fetch(`${this.apiserver}${this.apiPath}/${this.apiVersion}/${this.apiMethod}?${this.apiParameters}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("HTTP-Error: " + response.status);
@@ -23,14 +31,12 @@ export class Weatherservice {
     parseWeather(data) {
         let mainWeather = data["main"];
         let currentWeather = data["weather"][0];
-
         let weather = {
             "temp": mainWeather["temp"],
             "humidity": mainWeather["humidity"],
             "description": currentWeather["description"],
         };
-
-        console.log(data);
+        console.log (data);
         console.log(weather);
         return weather;
     }
@@ -38,7 +44,24 @@ export class Weatherservice {
     showWeather(weather) {
         document.querySelector('.weather__temp').textContent = "Temperature: " + Math.round(weather.temp - 273) + '°C';
         document.querySelector('.weather__humidity').textContent = 'Humidity: ' + weather.humidity + '%';
-        document.querySelector('.weather__desc').textContent = 'Description: ' + weather.description;
+        
+        let perevod = "";
+        switch (weather.description) {
+            case "clear sky":
+                perevod = "чистое небо";
+                break;
+            case "partly cloudy":
+                perevod = "облачность";
+                break;
+            default: 
+                perevod = "неизвестно";
+        }
+        document.querySelector('.weather__desc').textContent = 'Description: ' + perevod;
+    }
+    
+    initEvenListeners () {
+        this.selectCity = document.querySelector (".city-select");
+        this.selectCity.addEventListener("change", this.get.bind(this));
     }
 }
 
